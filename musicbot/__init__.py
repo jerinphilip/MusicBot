@@ -75,7 +75,7 @@ from .bot import MusicBot
 from .bot_external_adapter import MusicBotAdapter
 from .constructs import BetterLogRecord
 
-__all__ = ["MusicBot"]
+__all__ = ["MusicBot", "MusicBotAdapter"]
 
 logging.setLogRecordFactory(BetterLogRecord)
 
