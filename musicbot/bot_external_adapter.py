@@ -1,38 +1,10 @@
-import os
 import sys
 import time
-import shlex
-import shutil
-import random
-import inspect
-import logging
 import asyncio
-import pathlib
-import traceback
-import math
-import re
-
-import aiohttp
-import random
-import inspect
-import logging
-import asyncio
-import pathlib
-import traceback
-import math
-import re
-
 import aiohttp
 import discord
-import colorlog
 
-from io import BytesIO, StringIO
-from functools import wraps
-from textwrap import dedent
-from datetime import timedelta
 from collections import defaultdict
-
-from discord.enums import ChannelType
 
 from . import exceptions
 from . import downloader
@@ -40,13 +12,11 @@ from . import downloader
 from .config import Config, ConfigDefaults
 from .permissions import Permissions, PermissionsDefaults
 from .aliases import Aliases, AliasesDefault
-from .constructs import SkipState, Response
-from .utils import load_file, write_file, fixg, ftimedelta, _func_, _get_variable
+from .utils import load_file
 from .spotify import Spotify
 from .json import Json
 
 from .constants import VERSION as BOTVERSION
-from .constants import DISCORD_MSG_CHAR_LIMIT, AUDIO_CACHE_PATH
 
 from .bot import MusicBot
 from .bot import log, intents
