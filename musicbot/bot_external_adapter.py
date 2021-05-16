@@ -37,10 +37,6 @@ from discord.enums import ChannelType
 from . import exceptions
 from . import downloader
 
-from .playlist import Playlist
-from .player import MusicPlayer
-from .entry import StreamPlaylistEntry
-from .opus_loader import load_opus_lib
 from .config import Config, ConfigDefaults
 from .permissions import Permissions, PermissionsDefaults
 from .aliases import Aliases, AliasesDefault
@@ -52,7 +48,6 @@ from .json import Json
 from .constants import VERSION as BOTVERSION
 from .constants import DISCORD_MSG_CHAR_LIMIT, AUDIO_CACHE_PATH
 
-load_opus_lib()
 from .bot import MusicBot
 from .bot import log, intents
 
@@ -116,6 +111,9 @@ class MusicBotAdapter(MusicBot):
         self.aiosession = aiohttp.ClientSession(loop=self.loop)
         self.http.user_agent += " MusicBot/%s" % BOTVERSION
 
+        self.setup_spotify()
+
+    def setup_spotify(self):
         self.spotify = None
         if self.config._spotify:
             try:
