@@ -126,9 +126,9 @@ class MusicBotAdapter(MusicBot):
 
     # TODO(jerinphilip)
     # noinspection PyMethodOverriding
-    def run(self):
+    def run(self, *args, **kwargs):
         try:
-            self.loop.run_until_complete(self.start(*self.config.auth))
+            self.loop.run_until_complete(self.start(*args, **kwargs))
 
         except discord.errors.LoginFailure:
             # Add if token, else
