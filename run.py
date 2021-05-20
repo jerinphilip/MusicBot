@@ -376,8 +376,9 @@ def main():
         m = None
         try:
             from musicbot import MusicBot
+            from musicbot import MusicBotAdapter
 
-            m = MusicBot()
+            m = MusicBotAdapter()
 
             sh.terminator = ""
             sh.terminator = "\n"
