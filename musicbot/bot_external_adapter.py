@@ -78,8 +78,8 @@ class MusicBotAdapter(MusicBot):
         self.server_specific_data = defaultdict(ssd_defaults.copy)
 
         discord.Client.__init__(self, intents=intents)
-        self.aiosession = aiohttp.ClientSession(loop=self.loop)
-        self.http.user_agent += " MusicBot/%s" % BOTVERSION
+        self.http.user_agent = "MusicBot/%s" % BOTVERSION
+        self.aiosession = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent": self.http.user_agent})
 
         self.setup_spotify()
 
