@@ -17,3 +17,4 @@ config/autoplaylist_removed.txt
 config/whitelist.txt
 config/blacklist.txt
 .*.sw[op]
+docker-compose.yml
